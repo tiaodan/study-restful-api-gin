@@ -1,0 +1,60 @@
+package main
+
+import (
+	"log"
+	"study-restful-api-gin/config"
+	"study-restful-api-gin/db"
+	"study-restful-api-gin/logger"
+	"study-restful-api-gin/models"
+)
+
+// 初始化, 默认main会自动调用本方法
+func init() {
+	// 设置go自带log框架, 日志格式：日期时间 + 短文件名 + 行号
+	log.SetFlags(log.LstdFlags | log.Lshortfile)
+
+	// 获取配置实例（首次调用时触发初始化）
+	cfg := config.GetConfig(".", "config", "yaml")
+
+	// 读取配置文件，并设置为日志级别, 默认info
+	switch cfg.Log.Level {
+	case "debug":
+		logger.SetLogLevel(logger.LevelDebug)
+	case "info":
+		logger.SetLogLevel(logger.LevelInfo)
+	case "warn":
+		logger.SetLogLevel(logger.LevelWarn)
+	case "error":
+		logger.SetLogLevel(logger.LevelError)
+	default:
+		logger.SetLogLevel(logger.LevelInfo)
+	}
+
+	// 打印配置
+	logger.Debug("network.ximalayaIIp_ip: %s", cfg.Network.XimalayaIIp)
+
+	// 初始化数据库连接
+	db.InitDB()
+
+	// 自动迁移表结构
+	db.DB.AutoMigrate(&models.Order{}) // 有几个表, 写几个参数
+
+	// 插入默认数据
+	db.InsertDefaultData()
+}
+
+/*
+思路:
+ 1. 读取配置文件， (如果配置文件不填, 自动会有默认值)
+ 2. 设置日志级别, 默认info
+ 3. 统一调用错误打印, 封装函数
+ 4. 爬取页面数据, 尽量去重
+ 5. 插入数据库
+*/
+func main() {
+	// 1. 读取配置文件， (如果配置文件不填, 自动会有默认值)
+	// 2. 设置日志级别, 默认info
+	// 3. 统一调用错误打印, 封装函数
+	// 4. 爬取页面数据, 尽量去重
+
+}

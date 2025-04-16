@@ -1,0 +1,4 @@
+log:
+  level: debug
+network:
+  ximalaya_ip: www.ximalaya.com
