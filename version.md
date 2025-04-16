@@ -9,3 +9,5 @@
 
 # v0.0.0.1 2025.04.16
 - 修改model, 增加字段-DropShippingOrderTime 代发订单时间
+# v0.0.0.1 2025.04.16-v2
+- model, 新增gorm相关配置,如Id，主键自增

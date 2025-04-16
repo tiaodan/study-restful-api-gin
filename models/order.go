@@ -4,17 +4,18 @@ package models
 // 订单数据
 type Order struct {
 	// 拼多多相关信息
-	PddOrderId        string  `json:"pddOrderId"`        // PDD订单号
-	PddOrderTime      string  `json:"pddOrderTime"`      // 购买时间
-	PddOrderPrice     float64 `json:"pddOrderPrice"`     // 购买价格
-	PddProductType    string  `json:"pddProductType"`    // 产品类型
-	PddProductColor   string  `json:"pddProductColor"`   // 颜色
-	PddOrderStatus    string  `json:"pddOrderStatus"`    // 订单状态
-	PddBuyerInfo      string  `json:"pddBuyerInfo"`      // 买家信息
-	PddExpressCompany string  `json:"pddExpressCompany"` // 快递公司
-	PddExpressId      string  `json:"pddExpressId"`      // 物流编号
-	PddIsBlackList    bool    `json:"pddIsBlackList"`    // 买家拉黑
-	PddRemark         string  `json:"pddRemark"`         // pdd备注
+	Id                uint    `json:"id" gorm:"primaryKey;autoIncrement"` // 数据库id,主键、自增
+	PddOrderId        string  `json:"pddOrderId" gorm:"not null; unique"` // PDD订单号 数据库唯一索引
+	PddOrderTime      string  `json:"pddOrderTime" gorm:"not null"`       // 购买时间
+	PddOrderPrice     float64 `json:"pddOrderPrice" gorm:"not null"`      // 购买价格
+	PddProductType    string  `json:"pddProductType" gorm:"not null"`     // 产品类型
+	PddProductColor   string  `json:"pddProductColor" gorm:"not null"`    // 颜色
+	PddOrderStatus    string  `json:"pddOrderStatus"`                     // 订单状态
+	PddBuyerInfo      string  `json:"pddBuyerInfo" gorm:"not null"`       // 买家信息
+	PddExpressCompany string  `json:"pddExpressCompany"`                  // 快递公司
+	PddExpressId      string  `json:"pddExpressId"`                       // 物流编号
+	PddIsBlackList    bool    `json:"pddIsBlackList"`                     // 买家拉黑
+	PddRemark         string  `json:"pddRemark"`                          // pdd备注
 
 	// 代发平台相关信息
 	DropShippingPlatform      string  `json:"dropShippingPlatform"`      // 代发平台
