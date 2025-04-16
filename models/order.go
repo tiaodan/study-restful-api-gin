@@ -19,6 +19,7 @@ type Order struct {
 	// 代发平台相关信息
 	DropShippingPlatform      string  `json:"dropShippingPlatform"`      // 代发平台
 	DropShippingOrderId       string  `json:"dropShippingOrderId"`       // 代发订单号
+	DropShippingOrderTime     string  `json:"dropShippingOrderTime"`     // 代发订单时间
 	DropShippingFactoryName   string  `json:"dropShippingFactoryName"`   // 代发厂家名
 	DropShippingRealPrice     float64 `json:"dropShippingRealPrice"`     // 代发实际价
 	DropShippingPrice         float64 `json:"dropShippingPrice"`         // 购买价格

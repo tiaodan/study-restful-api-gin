@@ -18,10 +18,10 @@ func InitDB() {
 		var err error
 		DB, err = gorm.Open(mysql.Open(dsn), &gorm.Config{})
 		if err != nil {
-			log.Println("数据库连接失败:", err)
+			log.Println("单例: 数据库连接失败:", err)
 			panic(err)
 		}
-		log.Println("数据库连接成功")
+		log.Println("单例: 数据库连接成功")
 	})
 }
 

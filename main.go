@@ -8,6 +8,7 @@ import (
 	"study-restful-api-gin/logger"
 	"study-restful-api-gin/models"
 
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 )
 
@@ -60,6 +61,7 @@ func main() {
 	// 4. 封装restful api
 
 	r := gin.Default()
+	r.Use(cors.Default()) // 允许所有跨域
 	// Get 获取订单列表
 	r.GET("/orders", order.QueryOrders)
 

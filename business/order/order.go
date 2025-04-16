@@ -2,8 +2,8 @@
 package order
 
 import (
+	"study-restful-api-gin/db"
 	"study-restful-api-gin/logger"
-	"study-restful-api-gin/models"
 
 	"github.com/gin-gonic/gin"
 )
@@ -14,8 +14,10 @@ import (
 // 查
 func QueryOrders(c *gin.Context) {
 	logger.Debug("查询所有订单")
-	var order = []models.Order{
-		{PddOrderId: "1111", PddOrderTime: "2222"},
-	}
-	c.JSON(200, order)
+	// 假的数据
+	// var order = []models.Order{
+	// 	{PddOrderId: "1111", PddOrderTime: "2222"},
+	// }
+	orders, _ := db.QueryAllOrders()
+	c.JSON(200, orders)
 }

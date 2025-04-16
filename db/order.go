@@ -105,3 +105,15 @@ func BatchQueryOrders(ids []uint) ([]*models.Order, error) {
 	log.Printf("批量查询成功, 查询到 %d 条记录\n", len(orders))
 	return orders, nil
 }
+
+// 查所有
+func QueryAllOrders() ([]*models.Order, error) {
+	var orders []*models.Order
+	result := DB.Find(&orders)
+	if result.Error != nil {
+		log.Printf("批量查询失败: %v\n", result.Error)
+		return orders, result.Error
+	}
+	log.Printf("批量查询成功, 查询到 %d 条记录\n", len(orders))
+	return orders, nil
+}
