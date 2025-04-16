@@ -2,10 +2,13 @@ package main
 
 import (
 	"log"
+	"study-restful-api-gin/business/order"
 	"study-restful-api-gin/config"
 	"study-restful-api-gin/db"
 	"study-restful-api-gin/logger"
 	"study-restful-api-gin/models"
+
+	"github.com/gin-gonic/gin"
 )
 
 // 初始化, 默认main会自动调用本方法
@@ -48,13 +51,18 @@ func init() {
  1. 读取配置文件， (如果配置文件不填, 自动会有默认值)
  2. 设置日志级别, 默认info
  3. 统一调用错误打印, 封装函数
- 4. 爬取页面数据, 尽量去重
- 5. 插入数据库
+ 4. 封装restful api
 */
 func main() {
 	// 1. 读取配置文件， (如果配置文件不填, 自动会有默认值)
 	// 2. 设置日志级别, 默认info
 	// 3. 统一调用错误打印, 封装函数
-	// 4. 爬取页面数据, 尽量去重
+	// 4. 封装restful api
+
+	r := gin.Default()
+	// Get 获取订单列表
+	r.GET("/orders", order.QueryOrders)
+
+	r.Run(":8888") // 启动服务
 
 }
