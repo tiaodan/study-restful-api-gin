@@ -63,7 +63,9 @@ func main() {
 	r := gin.Default()
 	r.Use(cors.Default()) // 允许所有跨域
 	// Get 获取订单列表
-	r.GET("/orders", order.QueryOrders)
+	r.GET("/orders", order.OrdersQuery)
+	r.POST("/orders", order.OrderAdd)
+	r.PUT("/orders", order.OrderUpdate)
 
 	r.Run(":8888") // 启动服务
 

@@ -51,3 +51,122 @@
 [DEBUG] 2025/04/16 18:29:09 logger.go:61: 查询所有订单
 [DEBUG] 2025/04/16 18:32:29 logger.go:61: 查询所有订单
 [DEBUG] 2025/04/16 22:32:15 logger.go:61: network.ximalayaIIp_ip: www.ximalaya.com
+[DEBUG] 2025/04/16 22:36:46 logger.go:61: network.ximalayaIIp_ip: www.ximalaya.com
+[DEBUG] 2025/04/16 22:36:48 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/16 22:37:23 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/16 22:37:28 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/16 22:49:31 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/16 22:49:56 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/16 22:59:45 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/16 23:01:00 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/16 23:01:11 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/16 23:01:14 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/17 08:58:45 logger.go:61: network.ximalayaIIp_ip: www.ximalaya.com
+[DEBUG] 2025/04/17 08:59:14 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/17 08:59:17 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/17 08:59:24 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/17 09:12:43 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/17 09:21:18 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/17 09:22:15 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/17 09:24:16 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/17 09:25:53 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/17 09:27:25 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/17 09:27:29 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/18 09:28:20 logger.go:61: network.ximalayaIIp_ip: www.ximalaya.com
+[DEBUG] 2025/04/18 09:30:34 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/18 09:48:41 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/18 09:49:01 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/18 09:49:05 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/18 09:50:49 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/18 09:50:53 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/18 09:50:54 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/18 09:51:16 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/18 09:51:46 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/18 09:51:50 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/18 09:51:51 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/18 09:52:27 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/18 10:01:25 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/18 10:02:55 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/18 10:11:00 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/18 10:11:07 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/18 10:11:47 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/18 10:36:10 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/18 13:45:14 logger.go:61: network.ximalayaIIp_ip: www.ximalaya.com
+[DEBUG] 2025/04/18 13:45:33 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/18 13:45:44 logger.go:61: 增加订单
+[DEBUG] 2025/04/18 13:46:45 logger.go:61: network.ximalayaIIp_ip: www.ximalaya.com
+[DEBUG] 2025/04/18 13:47:25 logger.go:61: network.ximalayaIIp_ip: www.ximalaya.com
+[DEBUG] 2025/04/18 13:47:34 logger.go:61: 增加订单
+[ERROR] 2025/04/18 13:47:34 logger.go:82: 解析请求体失败, err: json: cannot unmarshal number into Go struct field Order.pddIsBlackList of type bool
+[DEBUG] 2025/04/18 13:49:26 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/18 13:49:29 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/18 13:50:22 logger.go:61: 增加订单
+[DEBUG] 2025/04/18 13:50:31 logger.go:61: 增加订单
+[DEBUG] 2025/04/18 13:50:43 logger.go:61: 增加订单
+[DEBUG] 2025/04/18 13:51:20 logger.go:61: 增加订单
+[DEBUG] 2025/04/18 13:55:18 logger.go:61: network.ximalayaIIp_ip: www.ximalaya.com
+[DEBUG] 2025/04/18 13:55:25 logger.go:61: 增加订单
+[ERROR] 2025/04/18 13:55:25 logger.go:82: 增加订单失败, err: Error 1054 (42S22): Unknown column 'dropShippingDiscountPrice' in 'field list'
+[DEBUG] 2025/04/18 13:55:40 logger.go:61: 增加订单
+[ERROR] 2025/04/18 13:55:40 logger.go:82: 增加订单失败, err: Error 1054 (42S22): Unknown column 'dropShippingDiscountPrice' in 'field list'
+[DEBUG] 2025/04/18 14:04:56 logger.go:61: network.ximalayaIIp_ip: www.ximalaya.com
+[DEBUG] 2025/04/18 14:05:12 logger.go:61: 增加订单
+[ERROR] 2025/04/18 14:05:12 logger.go:82: 增加订单失败, err: Error 1054 (42S22): Unknown column 'pddOrderPrice' in 'field list'
+[DEBUG] 2025/04/18 14:05:40 logger.go:61: 增加订单
+[ERROR] 2025/04/18 14:05:40 logger.go:82: 增加订单失败, err: Error 1054 (42S22): Unknown column 'pddOrderPrice' in 'field list'
+[DEBUG] 2025/04/18 14:06:04 logger.go:61: 增加订单
+[ERROR] 2025/04/18 14:06:04 logger.go:82: 增加订单失败, err: Error 1054 (42S22): Unknown column 'pddOrderPrice' in 'field list'
+[DEBUG] 2025/04/18 14:13:30 logger.go:61: network.ximalayaIIp_ip: www.ximalaya.com
+[DEBUG] 2025/04/18 14:14:16 logger.go:61: network.ximalayaIIp_ip: www.ximalaya.com
+[DEBUG] 2025/04/18 14:14:48 logger.go:61: 增加订单
+[DEBUG] 2025/04/18 14:15:05 logger.go:61: 增加订单
+[DEBUG] 2025/04/18 14:15:06 logger.go:61: 增加订单
+[DEBUG] 2025/04/18 14:15:32 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/18 14:15:35 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/18 14:19:47 logger.go:61: 增加订单
+[ERROR] 2025/04/18 14:19:47 logger.go:82: 增加订单失败, err: Error 1146 (42S02): Table 'pdd_order.orders' doesn't exist
+[DEBUG] 2025/04/18 14:20:48 logger.go:61: network.ximalayaIIp_ip: www.ximalaya.com
+[DEBUG] 2025/04/18 14:21:55 logger.go:61: network.ximalayaIIp_ip: www.ximalaya.com
+[DEBUG] 2025/04/18 14:23:13 logger.go:61: network.ximalayaIIp_ip: www.ximalaya.com
+[DEBUG] 2025/04/18 14:26:39 logger.go:61: network.ximalayaIIp_ip: www.ximalaya.com
+[DEBUG] 2025/04/18 14:27:32 logger.go:61: network.ximalayaIIp_ip: www.ximalaya.com
+[DEBUG] 2025/04/18 14:28:38 logger.go:61: 增加订单
+[DEBUG] 2025/04/18 14:28:57 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/18 17:18:33 logger.go:61: network.ximalayaIIp_ip: www.ximalaya.com
+[DEBUG] 2025/04/18 17:18:40 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/18 17:20:17 logger.go:61: 修改订单
+[DEBUG] 2025/04/18 17:20:32 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/18 17:20:34 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/18 17:20:34 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/18 17:21:05 logger.go:61: 修改订单
+[DEBUG] 2025/04/18 17:21:26 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/18 17:21:36 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/18 17:22:12 logger.go:61: 修改订单
+[DEBUG] 2025/04/18 17:22:19 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/18 17:22:33 logger.go:61: 修改订单
+[DEBUG] 2025/04/18 17:22:38 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/18 17:23:08 logger.go:61: 修改订单
+[DEBUG] 2025/04/18 17:23:13 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/18 17:23:21 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/18 17:23:29 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/18 17:23:51 logger.go:61: 修改订单
+[DEBUG] 2025/04/18 17:23:58 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/18 17:32:47 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/18 17:52:26 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/18 17:53:32 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/18 17:56:00 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/18 17:56:02 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/18 17:56:03 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/18 18:00:26 logger.go:61: network.ximalayaIIp_ip: www.ximalaya.com
+[DEBUG] 2025/04/18 18:00:35 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/18 18:00:36 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/18 18:00:44 logger.go:61: 增加订单
+[DEBUG] 2025/04/18 18:00:49 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/18 18:00:54 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/18 18:00:55 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/18 18:01:51 logger.go:61: 修改订单
+[DEBUG] 2025/04/18 18:01:56 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/18 18:01:57 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/18 18:01:58 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/18 18:01:59 logger.go:61: 查询所有订单
+[DEBUG] 2025/04/18 18:02:01 logger.go:61: 查询所有订单
