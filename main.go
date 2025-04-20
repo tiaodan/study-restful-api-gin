@@ -36,9 +36,10 @@ func init() {
 
 	// 打印配置
 	logger.Debug("network.ximalayaIIp_ip: %s", cfg.Network.XimalayaIIp)
+	logger.Debug("db.name: %s", cfg.DB.Name)
 
 	// 初始化数据库连接
-	db.InitDB()
+	db.InitDB("mysql", cfg.DB.Name, cfg.DB.User, cfg.DB.Password)
 
 	// 自动迁移表结构
 	db.DB.AutoMigrate(&models.Order{}) // 有几个表, 写几个参数

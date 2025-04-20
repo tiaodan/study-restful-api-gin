@@ -20,6 +20,11 @@ type Config struct {
 	Log struct {
 		Level string `mapstructure:"level"`
 	}
+	DB struct {
+		Name     string `mapstructure:"name"`
+		User     string `mapstructure:"user"`
+		Password string `mapstructure:"password"`
+	}
 }
 
 var (

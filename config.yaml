@@ -2,3 +2,7 @@ log:
   level: debug
 network:
   ximalaya_ip: www.ximalaya.com
+db:
+  name: pdd_order_test
+  user: root
+  password: password
