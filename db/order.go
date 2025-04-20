@@ -3,6 +3,7 @@ package db
 
 import (
 	"log"
+	"study-restful-api-gin/logger"
 	"study-restful-api-gin/models"
 
 	// 导入 clause 包
@@ -55,14 +56,17 @@ func OrderBatchAdd(orders []*models.Order) {
 }
 
 // 删
-func OrderDelete(id uint) {
+func OrderDelete(id uint) error {
+	logger.Debug("删除订单, 参数id= ", id)
 	var order models.Order
 	result := DB.Delete(&order, id)
 	if result.Error != nil {
-		log.Println("删除失败:", result.Error)
+		logger.Debug("删除失败:", result.Error)
+		return result.Error
 	} else {
-		log.Println("删除成功:", id)
+		logger.Debug("删除成功:", id)
 	}
+	return nil
 }
 
 // 批量删

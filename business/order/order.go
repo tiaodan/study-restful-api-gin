@@ -28,6 +28,25 @@ func OrderAdd(c *gin.Context) {
 }
 
 // 删
+func OrderDelete(c *gin.Context) {
+	logger.Debug("删除订单, 参数= ", c)
+	// 绑定前端数据
+	var order models.Order
+	if err := c.ShouldBindJSON(&order); err != nil {
+		logger.Error("解析请求体失败, err: %v", err)
+		c.JSON(400, gin.H{"error": err.Error()})
+		return // 必须保留 return，确保绑定失败时提前退出
+	}
+
+	err := db.OrderDelete(order.Id)
+	if err != nil {
+		logger.Error("删除订单失败, err: %v", err)
+		c.JSON(500, gin.H{"error": err.Error()})
+		return
+	}
+	c.JSON(200, "删除成功")
+}
+
 // 改
 func OrderUpdate(c *gin.Context) {
 	logger.Debug("修改订单")
