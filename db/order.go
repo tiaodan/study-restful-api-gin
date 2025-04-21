@@ -57,14 +57,14 @@ func OrderBatchAdd(orders []*models.Order) {
 
 // 删
 func OrderDelete(id uint) error {
-	logger.Debug("删除订单, 参数id= ", id)
+	logger.Debug("删除订单, 参数id= %d", id)
 	var order models.Order
 	result := DB.Delete(&order, id)
 	if result.Error != nil {
-		logger.Debug("删除失败:", result.Error)
+		logger.Debug("删除失败: %v", result.Error)
 		return result.Error
 	} else {
-		logger.Debug("删除成功:", id)
+		logger.Debug("删除成功: %d", id)
 	}
 	return nil
 }

@@ -2,6 +2,7 @@
 package order
 
 import (
+	"strconv"
 	"study-restful-api-gin/db"
 	"study-restful-api-gin/logger"
 	"study-restful-api-gin/models"
@@ -29,16 +30,19 @@ func OrderAdd(c *gin.Context) {
 
 // 删
 func OrderDelete(c *gin.Context) {
-	logger.Debug("删除订单, 参数= ", c)
-	// 绑定前端数据
-	var order models.Order
-	if err := c.ShouldBindJSON(&order); err != nil {
-		logger.Error("解析请求体失败, err: %v", err)
-		c.JSON(400, gin.H{"error": err.Error()})
-		return // 必须保留 return，确保绑定失败时提前退出
+	// 提取前端传递的 id 参数
+	idStr := c.Param("id")
+	logger.Debug("删除订单, 参数= %v", idStr)
+	id, err := strconv.ParseUint(idStr, 10, 64) // 转换为 ​十进制 64 位无符号整数
+	if err != nil {
+		logger.Error("删除订单, 参数错误")
+		c.JSON(400, gin.H{"error": "删除订单, 参数错误"})
+		return
 	}
 
-	err := db.OrderDelete(order.Id)
+	// 调用数据库删除方法
+	err = db.OrderDelete(uint(id))
+	// err := db.OrderDelete(1)
 	if err != nil {
 		logger.Error("删除订单失败, err: %v", err)
 		c.JSON(500, gin.H{"error": err.Error()})

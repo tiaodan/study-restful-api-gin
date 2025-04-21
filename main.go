@@ -65,7 +65,7 @@ func main() {
 	r.Use(cors.Default()) // 允许所有跨域
 	// Get 获取订单列表
 	r.POST("/orders", order.OrderAdd)
-	r.DELETE("/orders", order.OrderDelete)
+	r.DELETE("/orders/:id", order.OrderDelete)
 	r.PUT("/orders", order.OrderUpdate)
 	r.GET("/orders", order.OrdersQuery)
 
