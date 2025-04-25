@@ -26,4 +26,7 @@
 待处理：
 - 加上删除api，删除不成功，需调试
 - logger打的日志，文件位置不对，都是logger.go
-- 整合gin后，日志打印少，自定义的logger + fmt.Println都不打印了
+- 整合gin后，日志打印少，自定义W的logger + fmt.Println都不打印了
+
+# v0.0.0.5
+- 实现分页查询

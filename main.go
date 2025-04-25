@@ -67,7 +67,7 @@ func main() {
 	r.POST("/orders", order.OrderAdd)
 	r.DELETE("/orders/:id", order.OrderDelete)
 	r.PUT("/orders", order.OrderUpdate)
-	r.GET("/orders", order.OrdersQuery)
+	r.GET("/orders", order.OrdersPageQuery) // 分页查询
 
 	r.Run(":8888") // 启动服务
 

@@ -3,6 +3,6 @@ log:
 network:
   ximalaya_ip: www.ximalaya.com
 db:
-  name: pdd_order_test
+  name: pdd_order
   user: root
   password: password

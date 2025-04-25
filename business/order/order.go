@@ -4,6 +4,7 @@ package order
 import (
 	"strconv"
 	"study-restful-api-gin/db"
+	"study-restful-api-gin/errorutil"
 	"study-restful-api-gin/logger"
 	"study-restful-api-gin/models"
 
@@ -72,12 +73,50 @@ func OrderUpdate(c *gin.Context) {
 }
 
 // 查
+/*
+返回: json对象
+{
+	"total": 0,
+	"data": []
+}
+*/
 func OrdersQuery(c *gin.Context) {
 	logger.Debug("查询所有订单")
-	// 假的数据
-	// var order = []models.Order{
-	// 	{PddOrderId: "1111", PddOrderTime: "2222"},
-	// }
+	total, err := db.OrdersTotal() // 补充总数获取
+	errorutil.ErrorPrint(err, "查询订单总数失败")
 	orders, _ := db.OrdersQueryAll()
-	c.JSON(200, orders)
+
+	c.JSON(200, gin.H{
+		"total": total,
+		"data":  orders,
+	})
+}
+
+// 查-分页
+/*
+返回: json对象
+{
+	"total": 0,
+	"data": []
+}
+*/
+func OrdersPageQuery(c *gin.Context) {
+	logger.Debug("分页查询订单")
+	logger.Debug("c.DefaultQuery= %v", c.DefaultQuery)
+	pageStr := c.DefaultQuery("page", "1")  // 默认为 1
+	sizeStr := c.DefaultQuery("size", "10") // 默认为 10 ,所以不存在类型不是string类型
+	logger.Debug("前端传参, page=%v, size=%v", pageStr, sizeStr)
+
+	total, err := db.OrdersTotal() // 总数
+	errorutil.ErrorPrint(err, "查询订单总数失败")
+
+	page, _ := strconv.Atoi(pageStr) // 因为默认都是数字str了，所以不存在报错情况
+	size, _ := strconv.Atoi(sizeStr) // 因为默认都是数字str了，所以不存在报错情况
+	orders, _ := db.OrdersPageQuery(page, size)
+
+	// 构造指定的返回结构
+	c.JSON(200, gin.H{
+		"total": total,
+		"data":  orders,
+	})
 }
