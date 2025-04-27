@@ -99,14 +99,38 @@ func OrdersQuery(c *gin.Context) {
 	"total": 0,
 	"data": []
 }
+
+思路:
+1. 获取前端传参,并做校验。没传page和size, 不处理, 返回
+2. 参数缺失校验
+3. 参数类型校验
+4. 业务逻辑
 */
 func OrdersPageQuery(c *gin.Context) {
 	logger.Debug("分页查询订单")
-	logger.Debug("c.DefaultQuery= %v", c.DefaultQuery)
-	pageStr := c.DefaultQuery("page", "1")  // 默认为 1
-	sizeStr := c.DefaultQuery("size", "10") // 默认为 10 ,所以不存在类型不是string类型
+
+	// 强校验参数类型
+	pageStr := c.DefaultQuery("page", "") // 之前写法默认为 1, pageStr := c.DefaultQuery("page", "1")
+	sizeStr := c.DefaultQuery("size", "") // 之前写法默认为 10 ,所以不存在类型不是string类型, sizeStr := c.DefaultQuery("size", "10")
 	logger.Debug("前端传参, page=%v, size=%v", pageStr, sizeStr)
 
+	// 参数缺失校验
+	if pageStr == "" || sizeStr == "" {
+		c.JSON(400, gin.H{"error": "参数缺失"})
+		return
+	}
+
+	// 参数类型校验
+	if _, err := strconv.Atoi(pageStr); err != nil {
+		c.JSON(400, gin.H{"error": "page参数类型错误"})
+		return
+	}
+	if _, err := strconv.Atoi(sizeStr); err != nil {
+		c.JSON(400, gin.H{"error": "size参数类型错误"})
+		return
+	}
+
+	// 业务逻辑
 	total, err := db.OrdersTotal() // 总数
 	errorutil.ErrorPrint(err, "查询订单总数失败")
 
