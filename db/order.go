@@ -167,7 +167,9 @@ func OrdersTotal() (int64, error) {
 // 分页查询
 func OrdersPageQuery(pageNum, pageSize int) ([]*models.Order, error) {
 	var orders []*models.Order
-	result := DB.Limit(pageSize).Offset((pageNum - 1) * pageSize).Find(&orders)
+	// result := DB.Limit(pageSize).Offset((pageNum - 1) * pageSize).Find(&orders) // 不按时间排序
+	result := DB.Order("pdd_order_time DESC").Limit(pageSize).Offset((pageNum - 1) * pageSize).Find(&orders) // 不按时间排序
+
 	if result.Error != nil {
 		logger.Error("分页查询失败: %v", result.Error)
 		return orders, result.Error
